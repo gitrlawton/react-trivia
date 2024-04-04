@@ -8,6 +8,7 @@ import { Questions } from './types';
 import { useState } from "react"
 
 import StatBar from './components/StatBar';
+import QuestionComp from "./components/Question";
 
 function App() {
   // Initialize our questions to a variable 'allQuestions' of type 'Questions',
@@ -26,14 +27,26 @@ function App() {
   // answers we've chosen so far.
 
   return (
-    // Render the StatBar.  Pass it all the props that its type requires (these
-    // are defined in the Props type definition.)
     <div>
+      {/** Render the StatBar. */}
       <StatBar 
+        // Pass the StatBar all the props that its type requires 
+        // (these are defined in the Props type definition in StatBar.tsx)
+        //
+        // We want currentQuestion to not be display as its index (ie. 0),
+        // so add 1 to represent the actual question number.
         currentQuestion={currentQuestionIdx + 1}
+        // Number of questions is the length of the allQuestion's 'questions'
+        // property (ie. the list of questions.)
         totalQuestions={allQuestions.questions.length} 
+        // Use our state variables to pass the current number of correct
+        // and incorrect answers.
         correct={correctAnswers}
         incorrect={incorrectAnswers}
+      />
+      <QuestionComp 
+        question={allQuestions.questions[currentQuestionIdx]} 
+        onSubmit={() => {}}
       />
     </div>
   )

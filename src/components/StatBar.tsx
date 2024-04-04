@@ -1,3 +1,5 @@
+import StatBar_module from './StatBar.module.scss';
+
 // Defining a type for the props we will pass to our StatBar.
 // This will allows us to reference its different fields according to the 
 // ones we define.
@@ -11,7 +13,7 @@ type Props = {
 // Pass props with type 'Props'
 function StatBar(props: Props) {
     return (
-        <div>
+        <div className={StatBar_module['stat-container']}>
             <p>Questions: {props.currentQuestion}/{props.totalQuestions}</p>
             <p>Correct: {props.correct}</p>
             <p>Incorrect: {props.incorrect}</p>
