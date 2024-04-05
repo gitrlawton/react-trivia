@@ -17,8 +17,10 @@ type Props = {
 function QuestionComp(props: Props) {
     return (
         <div>
-            {/** Render what the question is. */}
+            {/** Display what the question is. */}
             <h3>{props.question.question}</h3>
+            {/** Render the Answers component, which is all the possible answers
+             * (ie. choices.) */}
             <Answers question={props.question} onSubmit={props.onSubmit} />
         </div>
     )

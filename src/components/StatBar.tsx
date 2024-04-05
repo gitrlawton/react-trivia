@@ -10,7 +10,7 @@ type Props = {
     incorrect: number;
 }
 
-// Pass props with type 'Props'
+// Pass props with type 'Props'.
 function StatBar(props: Props) {
     return (
         <div className={StatBar_module['stat-container']}>

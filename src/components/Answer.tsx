@@ -4,7 +4,9 @@ type Props = {
     text: string;
     // '?' means this field is optional to pass.
     // color will tells us if we need to display this answer as white,
-    // or red or green depending on if it is correct or not.
+    // or red or green depending on if it is correct or not.  If not color
+    // is based, it means we don't need to set the color to anything.  If
+    // a color is passed, it will either be "red" or "green".
     color?: string;
     // Once we have answered the question, we don't want to be able to
     // click on an answer again.
